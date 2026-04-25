@@ -1,0 +1,9 @@
+CREATE TABLE tarefas (
+  id INT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+  nome VARCHAR(255) NOT NULL,
+  descricao VARCHAR(255),
+  status VARCHAR(50) CHECK (status IN ('PENDENTE', 'EM_ANDAMENTO', 'CONCLUIDA')),
+  observacao TEXT,
+  data_criacao TIMESTAMP DEFAULT NOW(),
+  data_atualizacao TIMESTAMP
+);
